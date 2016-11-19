@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Personal Contacts</string>
+    <string name="hint_et_drop">What is it?</string>
+    <string name="str_add_it">Add it</string>
+    <string name="str_add_contact">Add a contact </string>
+    <string name="contact_name">Contact name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="str_add_drop">Add a drop</string>
+</resources>
