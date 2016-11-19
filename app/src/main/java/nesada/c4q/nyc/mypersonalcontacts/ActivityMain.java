@@ -28,7 +28,7 @@ public class ActivityMain extends AppCompatActivity {
 
     Toolbar mToolbar;
     Button mBtnAdd;
-    ContactRecyclerView mRecycler; // this is our RecyclerView that we created. (we created a mew class that extends RecyclerView)
+    ContactRecyclerView mRecycler; // this is our RecyclerView 
     Realm mRealm;
     RealmResults<Drop> mResults;
     AdapterDrops mAdapter;
@@ -60,7 +60,6 @@ public class ActivityMain extends AppCompatActivity {
         mRecycler.hideIfEmpty(mToolbar); // if recyclerView has no items, we are going to call this method 'hideIfEmpty' (hide toolbar.xml)
         mRecycler.showIfEmpty(mEmptyView); // if recyclerView has no items, we are going to call this method 'showIfEmpty' (show empty_drops.xml)
         mAdapter = new AdapterDrops(this,mRealm,mResults,mAddListener);
-        // this is pretty much same like calling an method. in this case we are calling out AdapterDrops class and sending all out items 'mResults'
         mRecycler.setAdapter(mAdapter);
         SimpleTouchCallBack callBack = new SimpleTouchCallBack(mAdapter);
         ItemTouchHelper helper = new ItemTouchHelper(callBack);
@@ -80,7 +79,7 @@ public class ActivityMain extends AppCompatActivity {
         }
     };
 
-    //if any data change in database, we gonna call the method update in AdapterDrop.class, so we update our RecyclerView
+    //if any data change in database,call the method update in AdapterDrop.class, so we update our RecyclerView
     private RealmChangeListener mChangeListener = new RealmChangeListener() {
         @Override
         public void onChange() {
@@ -118,7 +117,7 @@ public class ActivityMain extends AppCompatActivity {
         mResults.removeChangeListener(mChangeListener);
     }
 
-    //this is the background image inserted programmatically.We did in this way because the image was to big and it shows an error if we do in xml.
+    //this is the background image inserted programmatically.
     private void initBackgroundImage(){
         ImageView background = (ImageView)findViewById(R.id.iv_background);
         Glide.with(this)
